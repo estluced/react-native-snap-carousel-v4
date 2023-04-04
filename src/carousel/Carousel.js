@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Animated, Easing, FlatList, I18nManager, Platform, ScrollView, View, ViewPropTypes } from 'react-native';
+import { Animated, Easing, FlatList, I18nManager, Platform, View } from 'react-native';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 import PropTypes from 'prop-types';
 import shallowCompare from 'react-addons-shallow-compare';
 import {
@@ -11,6 +12,7 @@ import {
     stackAnimatedStyles,
     tinderAnimatedStyles
 } from '../utils/animations';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const IS_IOS = Platform.OS === 'ios';
 
@@ -293,7 +295,7 @@ export default class Carousel extends Component {
 
     _setScrollHandler(props) {
       // Native driver for scroll events
-      const scrollEventConfig = {
+        const scrollEventConfig = {
         listener: this._onScroll,
         useNativeDriver: true,
       };
